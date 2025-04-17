@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<h1>Your Campaigns</h1>
+<a href="{{ url_for('main.predict') }}">Predict New Campaign</a>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>CTR (%)</th>
+  </tr>
+  {% for campaign in campaigns %}
+  <tr>
+    <td>{{ campaign.campaign_id }}</td>
+    <td>{{ campaign.age }}</td>
+    <td>{{ 'Male' if campaign.gender == 1 else 'Female' }}</td>
+    <td>{{ '%.2f' % (campaign.predicted_ctr * 100) }}%</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

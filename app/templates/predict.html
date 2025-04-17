@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<h2>Predict CTR</h2>
+<form method="POST">
+  Campaign ID: <input name="campaign_id" /><br />
+  <label for="age">Age:</label>
+  <select name="age" id="age" required>
+    <option value="0">30-34</option>
+    <option value="1">35-39</option>
+    <option value="2">40-44</option>
+    <option value="3">45-49</option>
+  </select>
+  <br />
+
+  <label for="gender">Gender:</label>
+  <select name="gender" id="gender" required>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+  <br />
+  Interest 1: <input name="interest1" /><br />
+  Interest 2: <input name="interest2" /><br />
+  Interest 3: <input name="interest3" /><br />
+  Impressions: <input name="impressions" /><br />
+  Clicks: <input name="clicks" /><br />
+  Spent: <input name="spent" /><br />
+  Total Conversion: <input name="total_conversion" /><br />
+  Approved Conversion: <input name="approved_conversion" /><br />
+  <button type="submit">Predict</button>
+</form>
+{% endblock %}
